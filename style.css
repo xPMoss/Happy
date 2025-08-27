@@ -1,0 +1,90 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: sans-serif;
+    background-color: #f0f0f0;
+}
+
+.wheel-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.wheel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 5px solid #333;
+    overflow: hidden;
+    transition: transform 4s cubic-bezier(0.1, 0.7, 1.0, 0.1); /* Jämn animation */
+}
+
+.segment {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 0;
+    left: 50%;
+    transform-origin: 0% 100%;
+}
+
+.segment-inner {
+    position: absolute;
+    left: -100%;
+    top: -100%;
+    width: 200%;
+    height: 200%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(45deg);
+}
+
+.segment-text {
+    position: relative;
+    transform: rotate(-90deg);
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+}
+
+.pointer {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 30px solid #e74c3c;
+    z-index: 10;
+}
+
+#spin-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    border-radius: 5px;
+}
+
+#spin-button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+.result-container {
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
